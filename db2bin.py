@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from cStringIO import StringIO
+from io import StringIO
 import struct
 import hashlib
 from dbparse import DBParser
