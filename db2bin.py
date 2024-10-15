@@ -10,7 +10,7 @@ MAGIC = 0x52474442
 VERSION = 19
 
 if len(sys.argv) < 3:
-    print 'Usage: %s output-file input-file [key-file]' % sys.argv[0]
+    print('Usage: %s output-file input-file [key-file]' % sys.argv[0])
     sys.exit(2)
 
 def create_rules(countries):
