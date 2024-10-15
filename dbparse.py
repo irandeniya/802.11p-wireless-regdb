@@ -104,12 +104,12 @@ class Country(object):
     def __init__(self, dfs_region, permissions=None, comments=None):
         self._permissions = permissions or []
         self.comments = comments or []
-	self.dfs_region = 0
+        self.dfs_region = 0
 
-	if dfs_region:
-		if not dfs_region in dfs_regions:
-		    raise DFSRegionError(dfs_region)
-		self.dfs_region = dfs_regions[dfs_region]
+        if dfs_region:
+            if not dfs_region in dfs_regions:
+                raise DFSRegionError(dfs_region)
+            self.dfs_region = dfs_regions[dfs_region]
 
     def add(self, perm):
         assert isinstance(perm, Permission)
@@ -304,7 +304,7 @@ class DBParser(object):
         p = self._power[pname]
         try:
             perm = Permission(b, p, flags)
-        except FlagError, e:
+        except FlagError as e:
             self._syntax_error("Invalid flag '%s'" % e.flag)
         for cname, c in self._current_countries.iteritems():
             if perm in c:
